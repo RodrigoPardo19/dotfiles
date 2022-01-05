@@ -73,6 +73,17 @@
 ;; Set a colorful dired icons
 (setq all-the-icons-dired-monochrome nil)
 
+;; (setq-hook! 'rjsx-mode-hook +format-with 'prettier)
+
+;; Disable lsp formatter for rjsx mode, this gets the prettier conf(.prettierrc) in root of project like default formatter
+(setq-hook! 'rjsx-mode-hook +format-with-lsp nil)
+
+;; Change the default linter for rjsx mode, by default is lsp and this change it to eslint
+(setq-hook! 'rjsx-mode-hook flycheck-checker 'javascript-eslint)
+
+;; Treemacs show just the current project
+(setq treemacs-project-follow-cleanup t)
+
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
 ;; - `load!' for loading external *.el files relative to this one
